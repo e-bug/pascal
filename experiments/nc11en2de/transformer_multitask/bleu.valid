@@ -1,0 +1,1 @@
+BLEU+case.mixed+lang.en-de+numrefs.1+smooth.exp+test.wmt15+tok.13a+version.1.2.12 = 22.1 54.3/27.5/16.1/9.9 (BP = 1.000 ratio = 1.012 hyp_len = 44782 ref_len = 44260)

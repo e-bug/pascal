@@ -1,0 +1,51 @@
+#!/bin/sh
+## In current working directory 
+#$ -cwd 
+## Resource type F: qty 4
+#$ -l f_node=4
+## maximum run time 
+#$ -l h_rt=07:00:00
+#$ -N transformer_lin
+#$ -m abe
+#$ -M EMAIL
+## Initialize module command (don't remove)
+. /etc/profile.d/modules.sh
+## Load CUDA environment 
+module load cuda/8.0.61
+## Load Intel compiler environment 
+module load intel
+## Load cudnn/7.0
+module load cudnn/7.0
+## Load python
+module load python
+## Load Open MPI Environment
+module load openmpi/2.1.2
+
+## Created by:         Emanuele Bugliarello (@e-bug)
+## Date created:       9/4/2019
+## Date last modified: 9/4/2019
+
+## Global variable declaration (must be done every time)
+export CUDA_HOME=/apps/t3/sles12sp2/cuda/9.0.176
+export LD_LIBRARY_PATH=/apps/t3/sles12sp2/cuda/9.0.176/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:+${LD_LIBRARY_PATH}:}/apps/t3/sles12sp2/cuda/9.0.176/extras/CUPTI/lib64
+export PATH="$HOME/libs/anaconda3/bin${PATH:+:${PATH}}"
+. $HOME/libs/anaconda3/etc/profile.d/conda.sh
+
+## Activate environment
+conda activate pascal
+
+## Distributed setup
+NODES=4
+GPUS=4
+grep ^r $PE_HOSTFILE|awk '{print $1}' > ./hosts
+grep ^r $PE_HOSTFILE|awk '{print $1,$2}' > ./hostlist
+
+## Program file to run
+mpirun --hostfile ./hostlist --mca oob_tcp_if_include ib0 --mca btl_tcp_if_include ib0 \
+	-npernode 1 -n $NODES -x LD_LIBRARY_PATH -x PATH \
+	./train.sh $NODES $GPUS
+
+## Clean up
+conda deactivate
+rm ./hosts ./hostlist

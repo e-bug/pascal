@@ -1,7 +1,7 @@
-# Improving Neural Machine Translation with Parent-Scaled Self-Attention
+# Enhancing Machine Translation with Dependency-Aware Self-Attention
 
 This is the implementation of the approaches described in the paper:
-> Emanuele Bugliarello and Naoaki Okazaki. [Improving Neural Machine Translation with Parent-Scaled Self-Attention](https://arxiv.org/abs/1909.03149).
+> Emanuele Bugliarello and Naoaki Okazaki. [Enhancing Machine Translation with Dependency-Aware Self-Attention](https://arxiv.org/abs/1909.03149). In Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics, July 2020.
 
 We provide the code for reproducing our results, as well as translation outputs of each model.
 
@@ -64,10 +64,13 @@ This work is licensed under the MIT license. See [`LICENSE`](LICENSE) for detail
 Third-party software and data sets are subject to their respective licenses. <br>
 If you find our code/models or ideas useful in your research, please consider citing the paper:
 ```
-@article{Bugliarello+:Pascal,
-  title={Improving Neural Machine Translation with Parent-Scaled Self-Attention},
+@inproceedings{bugliarello-okazaki-2020-enhancing,
+  title={Enhancing Machine Translation with Dependency-Aware Self-Attention},
   author={Bugliarello, Emanuele and Okazaki, Naoaki},
-  journal={arXiv preprint arXiv:1909.03149},
-  year={2019}
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  month={jul},
+  year={2020},
+  publisher={Association for Computational Linguistics},
+  url={https://arxiv.org/abs/1909.03149}
 }
 ```

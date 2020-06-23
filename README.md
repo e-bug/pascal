@@ -65,12 +65,15 @@ Third-party software and data sets are subject to their respective licenses. <br
 If you find our code/models or ideas useful in your research, please consider citing the paper:
 ```
 @inproceedings{bugliarello-okazaki-2020-enhancing,
-  title={Enhancing Machine Translation with Dependency-Aware Self-Attention},
-  author={Bugliarello, Emanuele and Okazaki, Naoaki},
-  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
-  month={jul},
-  year={2020},
-  publisher={Association for Computational Linguistics},
-  url={https://arxiv.org/abs/1909.03149}
+    title = "Enhancing Machine Translation with Dependency-Aware Self-Attention",
+    author = "Bugliarello, Emanuele  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2020.acl-main.147",
+    pages = "1618--1627",
 }
 ```

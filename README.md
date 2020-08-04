@@ -6,6 +6,8 @@ This is the implementation of the approaches described in the paper:
 We provide the code for reproducing our results, as well as translation outputs of each model.
 
 ## Requirements
+You can clone this repository with submodules included issuing: `git clone --recurse-submodules git@github.com:e-bug/pascal`
+
 The requirements can be installed by setting up a conda environment: <br>
 `conda env create -f environment.yml` followed by `source activate pascal`
 

@@ -1,0 +1,6 @@
+[submodule "tools/mosesdecoder"]
+	path = tools/mosesdecoder
+	url = https://github.com/moses-smt/mosesdecoder
+[submodule "tools/subword-nmt"]
+	path = tools/subword-nmt
+	url = git@github.com:rsennrich/subword-nmt.git
